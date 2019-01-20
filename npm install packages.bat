@@ -1,1 +1,1 @@
-npm install webpack webpack-cli vue-loader element-ui --save-dev
+npm install webpack vue vue-router webpack-cli vue-loader element-ui babel-loader @babel/core @babel/preset-env --save-dev

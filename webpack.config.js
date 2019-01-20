@@ -2,9 +2,10 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path');
 
 module.exports = {
+	mode: 'development',
 	entry: {
-		login: '././Front/JS/Login.js',
-		index: '././Front/JS/Index.js',
+		//login: '././Front/JS/Login.js',
+		index: './index.js',
 
 	},
 	module: {
@@ -39,6 +40,23 @@ module.exports = {
 				{
 					test: /\.vue$/,
 					loader: 'vue-loader'
+				},
+				{
+					test: /\.css$/,
+					use: [
+						'vue-style-loader',
+						'css-loader'
+					]
+				},
+				{
+					test: /\.m?js$/,
+					exclude: /(node_modules|bower_components)/,
+					use: {
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env']
+						}
+					}
 				}
 			]
 	},
@@ -47,7 +65,7 @@ module.exports = {
 		new VueLoaderPlugin()
 	],
 	output: {
-		filename: '[name].js',
-		path: path.resolve(__dirname, 'wwwroot/JS')
+		filename: '[name].min.js',
+		path: path.resolve(__dirname, 'JS')
 	}
 };
