@@ -4,12 +4,12 @@
  
 <script>
 export default {
-  data () {
+  data() {
     return {
-      msg: 'Hello world!'
-    }
+      msg: "Hello world!"
+    };
   }
-}
+};
 </script>
  
 <style>

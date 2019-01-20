@@ -2,9 +2,10 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path');
 
 module.exports = {
+	devtool: 'source-map',
 	mode: 'development',
 	entry: {
-		//login: '././Front/JS/Login.js',
+		login: './login.js',
 		index: './index.js',
 
 	},
@@ -57,8 +58,20 @@ module.exports = {
 							presets: ['@babel/preset-env']
 						}
 					}
+				},
+				{
+					test: /\.(woff|woff2|eot|ttf|otf)$/,
+					use: {
+						loader: 'file-loader'
+					}
+
 				}
 			]
+	},
+	resolve: {
+		alias: {
+			vue: 'vue/dist/vue.js'
+		}
 	},
 	plugins: [
 		// make sure to include the plugin!
