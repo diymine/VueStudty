@@ -25,8 +25,8 @@ var app = new Vue({
                 var item = this.list[i];
                 total += item.price * item.count;
             }
-            return total.toString().replace(/\B(?=(\d{3})+$)/g, ',');
-        }
+            return total;
+        },
     },
     methods: {
         handleReduce: function(index) {
@@ -38,6 +38,11 @@ var app = new Vue({
         },
         handleRemove: function(index) {
             this.list.splice(index, 1);
+        }
+    },
+    filters: {
+        formatToThousand: function(value) {
+            return value.toString().replace(/\B(?=(\d{3})+$)/g, ',');
         }
     }
 });

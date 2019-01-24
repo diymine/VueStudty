@@ -24,7 +24,7 @@
                     <tr v-for="(item, index) in list">
                             <td>{{ index + 1 }}</td>
                             <td>{{ item.name }}</td>
-                            <td>{{ item.price }}</td>
+                            <td>{{ item.price |formatToThousand}}</td>
                             <td>
                                 <button
                                 @click="handleReduce(index)"
@@ -36,7 +36,7 @@
                     </tr>
                 </tbody>
             </table>
-            <div>总价：Y {{ totalPrice }}</div>
+            <div>总价：Y {{ totalPrice |formatToThousand}}</div>
         </template>
         <div v-else>购物车为空</div>
     </div>
