@@ -1,5 +1,6 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
 	devtool: 'source-map',
@@ -7,6 +8,7 @@ module.exports = {
 	entry: {
 		login: './login.js',
 		index: './index.js',
+		index_ts: './src/index.ts',
 
 	},
 	module: {
@@ -60,22 +62,25 @@ module.exports = {
 					}
 				},
 				{
-					test: /\.(woff|woff2|eot|ttf|otf)$/,
+					test: /\.(woff|woff2|eot|ttf|otf|jpg|png)$/,
 					use: {
 						loader: 'file-loader'
 					}
 
-				}
+				},
+				{ test: /\.(ts|js)x?$/, loader: 'babel-loader', exclude: /node_modules/ }
 			]
 	},
 	resolve: {
+		extensions: ['.ts', '.tsx', '.js', '.json', '.vue'],
 		alias: {
 			vue: 'vue/dist/vue.js'
 		}
 	},
 	plugins: [
 		// make sure to include the plugin!
-		new VueLoaderPlugin()
+		new VueLoaderPlugin(),
+		new ForkTsCheckerWebpackPlugin()
 	],
 	output: {
 		filename: '[name].min.js',

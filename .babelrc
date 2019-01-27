@@ -1,7 +1,8 @@
 {
   "presets": [
     "@babel/env",
-    "@babel/react"
+    "@babel/react",
+    "@babel/preset-typescript"
   ],
   "plugins": [
     [
@@ -10,6 +11,8 @@
         "libraryName": "element-ui",
         "styleLibraryName": "theme-chalk"
       }
-    ]
+    ],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
   ]
 }

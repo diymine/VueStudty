@@ -1,1 +1,1 @@
-npm install webpack vue vue-router webpack-cli vue-loader element-ui babel-loader @babel/core @babel/preset-env @babel/preset-react file-loader --save-dev
+npm install webpack vue vue-router webpack-cli vue-loader vue-template-compiler element-ui babel-loader @babel/core @babel/preset-env @babel/preset-react file-loader @babel/cli typescript @babel/preset-typescript @babel/plugin-proposal-class-properties @babel/plugin-proposal-object-rest-spread tslint fork-ts-checker-webpack-plugin vue-class-component vue-property-decorator --save-dev
