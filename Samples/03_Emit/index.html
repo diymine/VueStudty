@@ -12,6 +12,12 @@
         <p>总数：{{total }}</p>
         <my-component @increase="handleGetTotal" @reduce="handleGetTotal"></my-component>
     </div>
+    <hr/>
+    <div id="app2">
+        <p>总数：{{total }}</p>
+        <my-component2 v-model="total"></my-component2>
+        <button @click="handleReduce">-1</button>
+    </div>
     <script src=" https://unpkg.com/vue/dist/vue.min.js "></script>
     <script src="index.js "></script>
 </body>

@@ -20,7 +20,6 @@ Vue.component("my-component", {
     }
 });
 
-
 var app = new Vue({
     el: "#app",
     data: {
@@ -29,6 +28,31 @@ var app = new Vue({
     methods: {
         handleGetTotal: function(total) {
             this.total = total;
+        }
+    }
+});
+
+
+
+Vue.component("my-component2", {
+    props: ['value'],
+    template: '<input :value = "value" @input="updateValue" />',
+    methods: {
+        updateValue: function(event) {
+            this.$emit("input", event.target.value);
+        }
+    }
+});
+
+
+var app2 = new Vue({
+    el: "#app2",
+    data: {
+        total: 0
+    },
+    methods: {
+        handleReduce: function(total) {
+            this.total--;
         }
     }
 });
