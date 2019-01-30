@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>通过ref 获取子组件实例</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="handleRef ">通过ref 获取子组件实例</button>
+        <p>{{message}}</p>
+        <component-a ref="comA"></component-a>
+    </div>
+
+    <script src=" https://unpkg.com/vue/dist/vue.min.js "></script>
+    <script src="indexChildren.js"></script>
+</body>
+
+</html>
