@@ -85,20 +85,21 @@ Vue.component("tabs", {
             // this.$emit('input', name);
             // // 触发-个自定义事件，供父级使用
             // this.$emit('on-click', name);
-            this.updateStatus();
-        },
-        watch: {
-            value: function(val) {
-                this.currentValue = val;
-            },
-            currentValue: function(val) {
-                //在当前选中的tab发生变化时， 更新pane 的显示状态
-                this.updateStatus();
-            }
-        } //,
+            //this.updateStatus();
+        }
+
         // mounted: function() {
         //     this.updateNav();
         // }
 
-    }
+    },
+    watch: {
+        value: function(val) {
+            this.currentValue = val;
+        },
+        currentValue: function(val) {
+            //在当前选中的tab发生变化时， 更新pane 的显示状态
+            this.updateStatus();
+        }
+    } //,
 });
