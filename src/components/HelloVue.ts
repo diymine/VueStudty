@@ -1,7 +1,16 @@
 import Vue from "vue";
 
 export default Vue.extend({
-    props: ["name", "initialenthusiasm"],
+    props: {
+        //这里的value 是为了可以使用v - model
+        name: {
+            type: [String]
+        },
+        initialenthusiasm: {
+            type: [Number]
+        }
+    },
+    //props: ["name", "initialenthusiasm"],
     data() {
         return {
             enthusiasm: this.initialenthusiasm

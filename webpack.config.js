@@ -9,6 +9,7 @@ module.exports = {
         login: './login.js',
         index: './index.js',
         index_ts: './src/index.ts',
+        index_Router: './index_Router.js'
 
     },
     module: {
