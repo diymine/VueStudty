@@ -7,11 +7,17 @@ Vue.use(VueRouter);
 
 const Routers = [{
         path: '/test',
-        component: test
+        component: test,
+        meta: {
+            title: "首页"
+        }
     },
     {
         path: '/testRoute',
-        component: testRoute
+        component: testRoute,
+        meta: {
+            title: "关于"
+        }
     }
 ]
 
@@ -21,11 +27,20 @@ const RouterConfig = {
     routes: Routers
 }
 const router = new VueRouter(RouterConfig);
+router.beforeEach((to, from, next) => {
+    window.document.title = to.meta.title;
+    next();
+    // if (window.localStorage.getltem('token * )) {
+    //   next();
+    //   } else {
+    //   next( * /login 1 );
+});
+
+router.afterEach((to, from, next) => {
+    window.scrollTo(0, 0);
+});
 
 new Vue({
     el: '#app',
     router: router
-        // render: h => {
-        //     return h(testRoute)
-        // }
 });
